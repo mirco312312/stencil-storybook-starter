@@ -27,7 +27,7 @@ export default {
     // knobs.number('b-number', 46, { range: true, min: 46, max: 47, step: 1 });
     'b-number': {
       type: 'number',
-      args: [46, { range: true, min: 46, max: 47, step: 1 }]
+      args: [46, { range: true, min: 1, max: 50, step: 1 }]
     },
 
     // This willresult in the following call to knobs:
@@ -45,14 +45,14 @@ export default {
    */
   states: [
     {
-      title: 'Here it is in a different state',
+      title: 'Fixed1',
       description: ' Note, the knobs only affect the "default" state at the top.',
       props: {
         simpleText: 'skyscrapers!!!'
       }
     },
     {
-      title: 'This is yet another state',
+      title: 'Fixed2',
       description: 'Note, the knobs only affect the "default" state at the top.',
       props: {
         backgroundColor: 'green',

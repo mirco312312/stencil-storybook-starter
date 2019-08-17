@@ -9,6 +9,12 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface MyButton {
+    /**
+    * The value to emit on click
+    */
+    'value': string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -58,6 +64,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -70,12 +82,20 @@ declare global {
     new (): HTMLSimpleConfigElement;
   };
   interface HTMLElementTagNameMap {
+    'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
     'simple-config': HTMLSimpleConfigElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface MyButton extends JSXBase.HTMLAttributes<HTMLMyButtonElement> {
+    'onTest'?: (event: CustomEvent<any>) => void;
+    /**
+    * The value to emit on click
+    */
+    'value'?: string;
+  }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -122,6 +142,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'my-button': MyButton;
     'my-component': MyComponent;
     'simple-config': SimpleConfig;
   }

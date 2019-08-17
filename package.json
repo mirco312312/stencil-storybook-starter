@@ -1,5 +1,5 @@
 {
-  "name": "stencil-storybook-starter",
+  "name": "cumi-components",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-storybook-starter/stencil-storybook-starter.js",
+  "unpkg": "dist/cumi-components/cumi-components.js",
   "files": [
     "dist/",
     "loader/"
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-typescript": "^7.3.3",
     "@stencil/core": "^1.0.7",
+    "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addon-notes": "^5.1.9",
